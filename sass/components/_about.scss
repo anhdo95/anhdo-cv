@@ -1,11 +1,13 @@
 .about {
   grid-column: center-left / center-right;
-  margin: 5vh;
+  margin: 10vh 0;
 
   display: grid;
   grid-template-rows: repeat(3, min-content);
-  grid-template-columns: 1fr 3fr;
-  grid-gap: 3rem;
+  grid-template-columns: min-content 2fr;
+  grid-gap: 1rem 2rem;
+  justify-items: center;
+  // align-items: start;
 
   & > *:not(&__heading) {
     background-color: $color-white;
@@ -26,10 +28,46 @@
     object-fit: cover;
   }
 
+  &__contact {
+    display: grid;
+    grid-template-columns: min-content max-content;
+    grid-gap: 1.5rem 2rem;
+    align-items: center;
+
+    padding: 2rem 1.5rem;
+    color: $color-primary;
+  }
+
+  &__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: currentColor;
+  }
+
+  &__text {
+    font-size: $font-size-default;
+  }
+
   &__summary {
     grid-row: 2 / -1;
     grid-column: 2 / -1;
     padding: 3rem;
     font-size: $font-size-default;
+  }
+
+  &__description {
+    hyphens: auto;
+
+    strong {
+      @include transition;
+  
+      display: inline-block;
+    }
+    
+    strong:hover {
+      box-shadow: $shadow-primary;
+      color: $color-primary;
+      transform: rotate(3deg) scale(1.1);
+    }
   }
 }

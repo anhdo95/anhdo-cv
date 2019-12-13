@@ -44,11 +44,30 @@ ul {
   &--dark {
     color: $color-primary-dark;
   }
+
+  &--special {
+    @include transition;
+
+    font-weight: bold;
+    line-height: 1.6;
+    background-image: linear-gradient(
+      $color-primary-light,
+      $color-primary-dark,
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &:hover {
+      text-shadow: $shadow-secondary;
+      transform: skew(20deg, 2deg) scale(1.1);
+    }
+  }
 }
 
 .heading-tertiary {
   font-family: $font-display;
-  font-weight: 300;
+  font-weight: 400;
   font-size: $font-size-md;
   text-transform: uppercase;
 
