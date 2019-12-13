@@ -1,0 +1,97 @@
+$gradient-colors: (
+  1: ('start': $color-secondary-light, 'end': $color-secondary-dark),
+  2: ('start': $color-primary-light, 'end': $color-primary-dark),
+  3: ('start': $color-tertiary-light, 'end': $color-tertiary-dark)
+);
+
+$gradient-urls: (
+  1: '../img/nat-5.jpg',
+  2: '../img/nat-6.jpg',
+  3: '../img/nat-7.jpg'
+);
+
+.card {
+  position: relative;
+  background-color: $color-white;
+  overflow: hidden;
+  box-shadow: $shadow-secondary;
+
+  &__picture {
+    height: 15rem;
+    background-size: cover;
+    background-blend-mode: screen;
+
+    @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+
+    @for $i from 1 through 3 {
+      &--#{$i} {
+        $gradientColor: map-get($gradient-colors, $i);
+        $gradientUrl: map-get($gradient-urls, $i);
+  
+        background-image:
+          linear-gradient(
+            to top right,
+            map-get($gradientColor, 'start'),
+            map-get($gradientColor, 'end')
+          ), url($gradientUrl);
+      }
+    }
+  }
+
+  &__heading {
+    position: absolute;
+    top: 7rem;
+    right: 0;
+    width: 100%;
+    font-size: $font-size-md;
+    font-weight: 200;
+    color: $color-white;
+    text-align: right;
+    text-transform: uppercase;
+    line-height: 2;
+
+    @supports (-webkit-box-decoration-break: clone) or (box-decoration-break: clone) {
+      right: 1rem;
+      width: 80%;
+    }
+  }
+
+  &__heading-text {
+    padding: 1rem 1.5rem;
+
+    @supports (-webkit-box-decoration-break: clone) or (box-decoration-break: clone) {
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    @for $i from 1 through 3 {
+      &--#{$i} {
+        $gradientColor: map-get($gradient-colors, $i);
+  
+        background-image:
+          linear-gradient(
+            to top right,
+            rgba(map-get($gradientColor, 'start'), .85),
+            rgba(map-get($gradientColor, 'end'), .85)
+          );
+      }
+    }
+  }
+
+  &__details {
+    padding: 2rem;
+  }
+
+  &__detail-item {
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+
+    &:not(:last-child) {
+      border-bottom: $line;
+    }
+  }
+}
