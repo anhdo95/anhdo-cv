@@ -63,6 +63,19 @@ ul {
       transform: skew(20deg, 2deg) scale(1.1);
     }
   }
+
+  &--special-light {
+    @include transition;
+
+    font-weight: bold;
+    line-height: 1.6;
+    color: $color-grey-light-1;
+
+    &:hover {
+      text-shadow: $shadow-secondary;
+      transform: skew(20deg, 2deg) scale(1.1);
+    }
+  }
 }
 
 .heading-tertiary {

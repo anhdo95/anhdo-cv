@@ -18,7 +18,11 @@ $color-primary: #132B40;
 $color-primary-light: #326773;
 $color-primary-dark: #131626;
 
-$color-secondary: #c69963;
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
 
 $color-grey-light-1: #faf9f9;
 $color-grey-light-2: #f4f2f2;
@@ -28,6 +32,7 @@ $color-grey-light-4: #ccc;
 $color-grey-dark-1: #333;
 $color-grey-dark-2: #777;
 $color-grey-dark-3: #999;
+
 
 $color-white: #fff;
 $color-black: #000;
@@ -52,7 +57,7 @@ $border-default: 3px;
 $border-rounded: 100px;
 $border-circle: 50%;
 $photo: 3px solid $color-white;
-$line: 1px solid $color-grey-light-4;
+$line: 1px solid $color-grey-light-3;
 
 // TRANSITION
 $transition-property: all;

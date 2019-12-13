@@ -1,4 +1,27 @@
 .skills {
+  @include primaryBackground;
+
   grid-column: full-left / full-right;
-  background-color: brown;
+  -webkit-clip-path: polygon(0 25vh, 100% 0, 100% calc(100% - 25vh), 0 100%);
+  clip-path: polygon(0 25vh, 100% 0, 100% calc(100% - 25vh), 0 100%);
+
+  display: grid;
+  grid-template-columns: 
+    [full-left] minmax(6rem, 1fr)
+    [center-left] repeat(8, [col-left] minmax(10.25rem, 1fr) [col-right])
+    [center-right] minmax(6rem, 1fr)
+    [full-right];
+
+  &__inner {
+    grid-column: center-left / center-right;
+    padding: 30vh 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+
+  &__heading {
+    grid-column: 1 / -1;
+  }
 }
