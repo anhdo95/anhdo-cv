@@ -15,6 +15,13 @@
   align-items: center;
 }
 
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .flex-space-between {
   display: flex;
   justify-content: space-between;

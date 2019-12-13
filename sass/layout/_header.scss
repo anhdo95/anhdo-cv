@@ -1,4 +1,33 @@
 .header {
+  @extend .flex-column-center;
+
   grid-area: header-top / full-left / header-bottom / full-right;
-  background-color: yellowgreen;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, .8),
+    rgba($color-primary-dark, .8)
+  ), url(../img/hero-1-large.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  &__heading-main,
+  &__heading-sub {
+    @include animateInDirection(right);
+
+    line-height: 1;
+    letter-spacing: .5rem;
+  }
+
+  &__heading-main {
+    @include animateInDirection(left);
+
+    margin-top: -25vh;
+  }
+
+  &__social {
+    @include animateInDirection(bottom);
+  }
 } 

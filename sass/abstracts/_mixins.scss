@@ -6,6 +6,44 @@
     transition: $property $duration $timing $delay;
 }
 
+@mixin animateInDirection(
+  $direction, 
+  $duration: $transition-duration-slow, 
+  $timing: $transition-timing,
+  $delay: $transition-delay) {
+    animation: moveIn#{$direction} $duration $timing $delay;
+
+    $topDirection: (0: translateY(-20rem), 80: translateY(1rem), 100: translateY(0));
+    $rightDirection: (0: translateX(20rem), 80: translateX(-1rem), 100: translateX(0));
+    $bottomDirection: (0: translateY(20rem), 80: translateY(-1rem), 100: translateY(0));
+    $leftDirection: (0: translateX(-20rem), 80: translateX(1rem), 100: translateX(0));
+
+    $directions: (
+      'top': $topDirection,
+      'right': $rightDirection,
+      'bottom': $bottomDirection,
+      'left': $leftDirection,
+    );
+
+    $currentDirection: map-get($directions, $direction);
+
+    @keyframes moveIn#{$direction} {
+      0% {
+        opacity: 0;
+        transform: map-get($currentDirection, 0);
+      }
+    
+      80% {
+        transform: map-get($currentDirection, 80);
+      }
+    
+      100% {
+        opacity: 1;
+        transform: map-get($currentDirection, 100);
+      }
+    }
+}
+
 // MEDIA QUERY MANAGER
 /*
 0 - 375px:      Phone smallest
