@@ -1,13 +1,19 @@
 $gradient-colors: (
-  1: ('start': $color-secondary-light, 'end': $color-secondary-dark),
-  2: ('start': $color-primary-light, 'end': $color-primary-dark),
-  3: ('start': $color-tertiary-light, 'end': $color-tertiary-dark)
+  1: ('start': $color-primary-light, 'end': $color-primary-dark),
+  2: ('start': $color-secondary-light, 'end': $color-secondary-dark),
+  3: ('start': $color-tertiary-light, 'end': $color-tertiary-dark),
+  4: ('start': $color-primary-light, 'end': $color-primary-dark),
+  5: ('start': $color-secondary-light, 'end': $color-secondary-dark),
+  6: ('start': $color-tertiary-light, 'end': $color-tertiary-dark)
 );
 
 $gradient-urls: (
-  1: '../img/nat-5.jpg',
-  2: '../img/nat-6.jpg',
-  3: '../img/nat-7.jpg'
+  1: '../img/hero-2-small.jpg',
+  2: '../img/hero-2-small.jpg',
+  3: '../img/hero-2-small.jpg',
+  4: '../img/hero-2-small.jpg',
+  5: '../img/hero-2-small.jpg',
+  6: '../img/hero-2-small.jpg'
 );
 
 .card {
@@ -19,6 +25,7 @@ $gradient-urls: (
   &__picture {
     height: 15rem;
     background-size: cover;
+    background-position: center;
     background-blend-mode: screen;
 
     @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
@@ -26,7 +33,7 @@ $gradient-urls: (
       clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     }
 
-    @for $i from 1 through 3 {
+    @for $i from 1 through 6 {
       &--#{$i} {
         $gradientColor: map-get($gradient-colors, $i);
         $gradientUrl: map-get($gradient-urls, $i);
@@ -67,7 +74,7 @@ $gradient-urls: (
       box-decoration-break: clone;
     }
 
-    @for $i from 1 through 3 {
+    @for $i from 1 through 6 {
       &--#{$i} {
         $gradientColor: map-get($gradient-colors, $i);
   
