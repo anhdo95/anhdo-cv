@@ -6,7 +6,7 @@
     [footer-top] 10rem
     [footer-bottom sidebar-bottom];
   grid-template-columns: 
-    [sidebar-left] 15rem
+    [sidebar-left] 20rem
     [sidebar-right full-left] minmax(6rem, 1fr)
     [center-left] repeat(8, [col-left] minmax(14rem, 1fr) [col-right])
     [center-right] minmax(6rem, 1fr)

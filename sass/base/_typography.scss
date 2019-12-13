@@ -17,6 +17,20 @@ ul {
   list-style-type: none;
 }
 
+.heading-primary {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--font-size-md);
+
+  &--light {
+    color: var(--color-grey-light-1);
+  }
+  
+  &--dark {
+    color: var(--color-grey-dark-1);
+  }
+}
+
 .paragraph {
   margin-bottom: 2rem;
   font-size: var(--font-size-sm);
