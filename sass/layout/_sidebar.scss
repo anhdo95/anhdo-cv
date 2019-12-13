@@ -3,41 +3,41 @@
   text-align: center;
   background-image: linear-gradient(
     to right bottom,
-    var(--color-primary),
-    var(--color-primary-dark),
+    $color-primary,
+    $color-primary-dark,
     );
 
   &__heading {
     padding: 2rem;
-    background-color: var(--color-primary-dark);
-    box-shadow: var(--shadow-primary);
+    background-color: $color-primary-dark;
+    box-shadow: $shadow-primary;
   }
 
   &__item {
     @include transition;
 
     position: relative;
-    color: var(--color-grey-light-4);
+    color: $color-grey-light-4;
 
     &::before {
       @extend .abs-full;
       
       content: '';
       right: 98%;
-      background-color: var(--color-primary-light);
+      background-color: $color-primary-light;
       transform: scaleY(0);
       transition: transform 
-                    var(--transition-duration) 
-                    var(--transition-timing),
+                    $transition-duration 
+                    $transition-timing,
                   right 
-                    var(--transition-duration)
-                    var(--transition-timing-fast)
-                    var(--transition-duration);
+                    $transition-duration
+                    $transition-timing-fast
+                    $transition-duration;
     }
     
     &:hover,
     &--active {
-      color: var(--color-white);
+      color: $color-white;
       
       &::before {
         right: 0;
@@ -46,7 +46,7 @@
     }
 
     &:not(:last-child) {
-      border-bottom: 1px solid var(--color-primary);
+      border-bottom: 1px solid $color-primary;
     }
   }
     

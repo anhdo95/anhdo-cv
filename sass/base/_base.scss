@@ -35,8 +35,8 @@ button {
 }
 
 ::selection {
-  color: var(--color-white);
-  background-color: var(--color-primary-light);
+  color: $color-white;
+  background-color: $color-primary-light;
 }
 
 ::-webkit-scrollbar {
@@ -44,15 +44,15 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--color-grey-light-1);
-  border-radius: var(--border-radius-default);
+  background-color: $color-grey-light-1;
+  border-radius: $border-default;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-grey-dark-1);
-  border-radius: var(--border-radius-default);
+  background-color: $color-grey-dark-1;
+  border-radius: $border-default;
   
   &:hover {
-    background-color: var(--color-primary);
+    background-color: $color-primary;
   }
 }

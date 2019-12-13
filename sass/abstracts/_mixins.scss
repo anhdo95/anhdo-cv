@@ -1,8 +1,8 @@
 @mixin transition(
-  $property: var(--transition-property), 
-  $duration: var(--transition-duration), 
-  $timing: var(--transition-timing),
-  $delay: var(--transition-delay)) {
+  $property: $transition-property, 
+  $duration: $transition-duration, 
+  $timing: $transition-timing,
+  $delay: $transition-delay) {
     transition: $property $duration $timing $delay;
 }
 

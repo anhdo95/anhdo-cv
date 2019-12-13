@@ -1,13 +1,13 @@
 body {
-  font-family: var(--font-primary);
+  font-family: $font-primary;
   font-weight: 400;
   line-height: 1.6;
-  color: var(--color-grey-dark-1);
+  color: $color-grey-dark-1;
 }
 
 a {
-  font-size: var(--font-size-default);
-  color: var(--color-grey-dark-1);
+  font-size: $font-size-default;
+  color: $color-grey-dark-1;
   text-decoration: none;
 }
 
@@ -18,21 +18,35 @@ ul {
 }
 
 .heading-primary {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: var(--font-size-md);
+  font-family: $font-display;
+  font-weight: 100;
+  font-size: $font-size-xl;
 
   &--light {
-    color: var(--color-grey-light-1);
+    color: $color-grey-light-1;
   }
   
   &--dark {
-    color: var(--color-grey-dark-1);
+    color: $color-grey-dark-1;
+  }
+}
+
+.heading-secondary {
+  font-family: $font-display;
+  font-weight: 100;
+  font-size: $font-size-lg;
+
+  &--light {
+    color: $color-grey-light-1;
+  }
+  
+  &--dark {
+    color: $color-grey-dark-1;
   }
 }
 
 .paragraph {
   margin-bottom: 2rem;
-  font-size: var(--font-size-sm);
-  color: var(--color-grey-dark-2);
+  font-size: $font-size-sm;
+  color: $color-grey-dark-2;
 }
