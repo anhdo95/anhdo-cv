@@ -11,4 +11,6 @@
     [center-left] repeat(8, [col-left] minmax(10.25rem, 1fr) [col-right])
     [center-right] minmax(6rem, 1fr)
     [full-right];
+
+    background-color: $color-grey-light-2;
 }

@@ -17,7 +17,6 @@
   &__heading-sub {
     @include animateInDirection(right);
 
-    line-height: 1;
     letter-spacing: .5rem;
   }
 

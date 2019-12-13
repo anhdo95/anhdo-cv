@@ -49,8 +49,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $color-grey-dark-1;
-  border-radius: $border-default;
+  background-color: $color-primary-light;
   
   &:hover {
     background-color: $color-primary;
