@@ -1,0 +1,62 @@
+@mixin transition(
+  $property: var(--transition-property), 
+  $duration: var(--transition-duration), 
+  $timing: var(--transition-timing),
+  $delay: var(--transition-delay)) {
+    transition: $property $duration $timing $delay;
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 375px:      Phone smallest
+375 - 425px:    Phone small
+425 - 600px:    Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+2x-screen:      MacOS, Retina display
+touch-device:   Touchable devices, consist of desktop (touch)
+*/
+
+/*
+$breakpoint:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+- 2x-screen
+- touch-device
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  $breakpoints: (
+    phone-smallest:        'max-width: 23.4375em',    // 375px
+    phone-small:        'max-width: 26.5625em',    // 425px
+    phone:        'max-width: 37.5em',    // 600px
+    tab-port:     'max-width: 56.25em',   // 900px
+    tab-land:     'max-width: 75em',      // 1200px
+    big-desktop:  'min-width: 112.5em',   // 1800px
+  );
+    
+  @if $breakpoint == 2x-screen {
+    // If the user is 2x screen resolution and match the conditions below
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+           only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+           only screen and (min-width: 75em) {
+                             @content
+                           }
+  }
+
+  @if $breakpoint == touch-device {
+    @media only screen and (max-width: 56.25em),
+           only screen and (hover: none) {
+                             @content
+                           }
+  }
+
+  @media only screen and (map-get($breakpoints, $breakpoint)) {
+    @content
+  }
+}

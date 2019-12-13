@@ -1,0 +1,125 @@
+// FLEX
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-space-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+// TRANSFORM
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+// POSITION
+.abs-full {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// ALIGN
+.text-center {
+  text-align: center;
+}
+
+// MARGIN
+.mt-md {
+  margin-top: 3rem;
+}
+
+.mt-lg {
+  margin-top: 5rem;
+}
+
+.mt-xl {
+  margin-top: 8rem;
+
+  @include respond(tab-port) {
+    margin-top: 4rem;
+  }
+
+  @include respond(phone) {
+    margin-top: 2rem;
+  }
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-sm {
+  margin-bottom: 1.5rem;
+}
+
+.mb-md {
+  margin-bottom: 3rem;
+
+  @include respond(tab-port) {
+    margin-bottom: 2rem;
+  }
+
+  @include respond(phone) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.mb-lg {
+  margin-bottom: 5rem;
+
+  @include respond(tab-port) {
+    margin-bottom: 3rem;
+  }
+
+  @include respond(phone) {
+    margin-bottom: 2rem;
+  }
+}
+
+.mb-xl {
+  margin-bottom: 8rem;
+
+  @include respond(tab-port) {
+    margin-bottom: 4rem;
+  }
+
+  @include respond(phone) {
+    margin-bottom: 2rem;
+  }
+}
+
+// PADDING
