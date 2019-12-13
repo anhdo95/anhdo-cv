@@ -80,6 +80,66 @@ ul {
   }
 }
 
+.btn {
+  @include transition;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 1rem 2rem 1rem 5rem;
+  font-size: $font-size-default;
+  color: $color-grey-light-1;
+  background-image: linear-gradient(
+    225deg,
+    $color-primary,
+    $color-primary-light,
+  );
+
+  &:hover {
+    color: $color-white;
+    background-image: linear-gradient(
+      225deg,
+      $color-primary-light,
+      $color-primary,
+    );
+    box-shadow: $shadow-secondary;
+  }
+
+  &__icon {
+    @include transition($timing: $transition-timing-fast);
+
+    position: absolute;
+    left: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: currentColor;
+    transform: translateY(-50%);
+
+    &--invisible {
+      opacity: 0;
+      visibility: hidden;
+      top: -50%;
+    }
+
+    &--visible {
+      top: 50%;
+    }
+  }
+
+  &:hover &__icon {
+    &--invisible {
+      opacity: 1;
+      visibility: visible;
+      top: 50%;
+    }
+
+    &--visible {
+      top: 150%;
+    }
+  }
+}
+
 .paragraph {
   margin-bottom: 2rem;
   font-size: $font-size-default;

@@ -7,7 +7,6 @@
   grid-template-columns: min-content 2fr;
   grid-gap: 1rem 2rem;
   justify-items: center;
-  // align-items: start;
 
   & > *:not(&__heading) {
     background-color: $color-white;
