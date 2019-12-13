@@ -1,0 +1,11 @@
+.keyword {
+  @include transition;
+
+  display: inline-block;
+
+  &:hover {
+    box-shadow: $shadow-primary;
+    color: $color-primary;
+    transform: rotate(3deg) scale(1.1);
+  }
+}
