@@ -1,4 +1,112 @@
+$gradient-colors: (
+  1: ('start': $color-secondary-light, 'end': $color-secondary-dark),
+  2: ('start': $color-tertiary-light, 'end': $color-tertiary-dark),
+  3: ('start': $color-primary-light, 'end': $color-primary-dark),
+);
+
 .experiences {
-  grid-column: full-left / full-right;
-  background-color: darkblue;
+  grid-column: center-left / center-right;
+  margin: 10vh 0;
+  display: grid;
+
+  &__heading {
+    justify-self: center;
+  }
+
+  &__box {
+    padding: 4rem;
+    font-size: $font-size-default;
+    color: $color-grey-dark-2;
+    background-color: $color-white;
+    box-shadow: $shadow-secondary;
+
+    display: grid;
+    grid-template-columns: 1fr min-content 2fr;
+    grid-gap: 1rem 4rem;
+    align-items: start;
+
+    &:not(:last-child) {
+      margin-bottom: 3rem; 
+    }
+  }
+
+  &__designation {
+    text-align: right;
+  }
+
+  &__position {
+    line-height: 1.4;
+    color: $color-grey-dark-1;
+  }
+
+  &__date {
+    @include transition($delay: $transition-duration);
+
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    margin-top: -3rem;
+    color: $color-grey-light-1;
+    border: 1rem solid $color-grey-light-3;
+    border-radius: $border-circle;
+
+    @for $i from 1 through 3 {
+      &--#{$i} {
+        $gradientColor: map-get($gradient-colors, $i);
+  
+        background-image:
+          linear-gradient(
+            map-get($gradientColor, 'start'),
+            map-get($gradientColor, 'end')
+          );
+      }
+    }
+
+    & > * {
+      @extend .abs-center;
+      @include transition($timing: $transition-timing-fast);
+
+      position: absolute;
+      font-size: $font-size-sm;
+    }
+  }
+
+  &__box:hover &__date {
+    transform: rotate(360deg);
+  }
+
+  &__date-invisible {
+    top: -100%;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__box:hover &__date-invisible {
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__box:hover &__date-visible {
+    top: 150%;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__project {
+    &:not(:first-child) {
+      padding-top: 2rem;
+      border-top: $line;
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 2rem;
+    }
+  }
+
+  &__project-link {
+    display: inline-block;
+    font-weight: bold;
+    color: $color-primary;
+  }
 }
