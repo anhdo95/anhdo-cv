@@ -1,17 +1,30 @@
 .container {
   display: grid;
+  
   grid-template-rows: 
-    [sidebar-top header-top] 100vh
-    [header-bottom] repeat(4, min-content)
-    [footer-top] 10rem
-    [footer-bottom sidebar-bottom];
-  grid-template-columns: 
-    [sidebar-left] 20rem
-    [sidebar-right full-left] minmax(6rem, 1fr)
-    [center-left] repeat(8, [col-left] minmax(10.25rem, 1fr) [col-right])
-    [center-right] minmax(6rem, 1fr)
-    [full-right];
-
+      [header-top] 100vh
+      [header-bottom] repeat(4, min-content)
+      [footer-top] 10rem
+      [footer-bottom];
+    grid-template-columns: 
+      [full-left] minmax(6rem, 1fr)
+      [center-left] repeat(8, [col-left] minmax(10.25rem, 1fr) [col-right])
+      [center-right] minmax(6rem, 1fr)
+      [full-right];
   overflow-x: hidden;
   background-color: $color-grey-light-2;
+
+  @include media($ml) {
+    grid-template-rows: 
+      [sidebar-top header-top] 100vh
+      [header-bottom] repeat(4, min-content)
+      [footer-top] 10rem
+      [footer-bottom sidebar-bottom];
+    grid-template-columns: 
+      [sidebar-left] 20rem
+      [sidebar-right full-left] minmax(6rem, 1fr)
+      [center-left] repeat(8, [col-left] minmax(10.25rem, 1fr) [col-right])
+      [center-right] minmax(6rem, 1fr)
+      [full-right];
+  }
 }

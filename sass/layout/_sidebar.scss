@@ -4,7 +4,7 @@
   z-index: $zindex-sidebar;
   text-align: center;
   
-  @include media($m) {
+  @include media($ml) {
     position: static;
     grid-area: sidebar-top / sidebar-left / sidebar-bottom / sidebar-right;
   }
@@ -20,8 +20,9 @@
       $color-primary,
       $color-primary-dark,
     );
+    box-shadow: $shadow-primary;
 
-    @include media($m) {
+    @include media($ml) {
       position: static;
       max-width: initial;
     }
@@ -40,10 +41,14 @@
     background-color: $color-primary;
     box-shadow: $shadow-primary;
     cursor: pointer;
+
+    @include media($ml) {
+      display: none;
+    }
   }
 
   &__button-icon {
-    @include transition(transform);
+    @include transition;
 
     position: relative;
     display: block;
@@ -70,6 +75,16 @@
 
     &::after {
       top: 1.5rem;
+    }
+  }
+
+  &__button:hover &__button-icon {
+    &::before {
+      top: -1.7rem;
+    }
+
+    &::after {
+      top: 1.7rem;
     }
   }
 
