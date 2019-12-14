@@ -1,4 +1,57 @@
 .education {
+  @include primaryBackground;
+
   grid-column: full-left / full-right;
-  background-color: orangered;
+  -webkit-clip-path: polygon(0 25vh, 100% 0, 100% calc(100% - 25vh), 0 100%);
+  clip-path: polygon(0 25vh, 100% 0, 100% calc(100% - 25vh), 0 100%);
+
+  display: grid;
+  grid-template-columns: 
+    [full-left] minmax(6rem, 1fr)
+    [center-left] repeat(8, [col-left] minmax(10.25rem, 1fr) [col-right])
+    [center-right] minmax(6rem, 1fr)
+    [full-right];
+
+  &__inner {
+    grid-column: center-left / center-right;
+    padding: 35vh 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    justify-items: center;
+  }
+
+  &__heading {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  &__box {
+    @include transition;
+
+    display: grid;
+    grid-gap: .5rem;
+    align-content: center;
+    justify-items: center;
+    width: 30rem;
+    height: 30rem;
+    padding: 2rem;
+    font-size: $font-size-default;
+    background-color: $color-white;
+    border: 2rem solid $color-grey-light-2;
+    border-radius: $border-circle;
+    box-shadow: $shadow-secondary;
+
+    &:hover {
+      font-size: $font-size-sm;
+      border: 3rem solid $color-grey-light-2;
+      transform: rotate(360deg);
+    }
+  }
+
+  &__certification {
+    font-weight: bold;
+    color: $color-primary;
+  }
 }
