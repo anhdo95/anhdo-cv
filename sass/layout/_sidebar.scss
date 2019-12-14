@@ -36,8 +36,8 @@
   
   &__button {
     position: absolute;
-    right: -6rem;
     top: 0;
+    right: -6rem;
     width: 6rem;
     height: 6rem;
     background-color: $color-primary;
@@ -54,7 +54,7 @@
 
     position: relative;
     display: block;
-    width: 4rem;
+    width: 3.5rem;
     height: 2px;
     margin: calc(3rem - 1px) auto 0;
     background-color: $color-white;
@@ -66,27 +66,27 @@
       position: absolute;
       content: '';
       left: 0;
-      width: 4rem;
+      width: 3.5rem;
       height: 2px;
       background-color: $color-white;
     }
 
+    &::before {
+      top: -1.3rem;
+    }
+
+    &::after {
+      top: 1.3rem;
+    }
+  }
+
+  &__button:hover &__button-icon {
     &::before {
       top: -1.5rem;
     }
 
     &::after {
       top: 1.5rem;
-    }
-  }
-
-  &__button:hover &__button-icon {
-    &::before {
-      top: -1.7rem;
-    }
-
-    &::after {
-      top: 1.7rem;
     }
   }
 
