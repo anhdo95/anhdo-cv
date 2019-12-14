@@ -10,9 +10,12 @@
     padding: 35vh 0;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
+    grid-gap: 3rem;
     justify-items: center;
+
+    @include media($xs) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__heading {

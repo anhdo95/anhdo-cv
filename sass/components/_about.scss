@@ -4,13 +4,19 @@
 
   display: grid;
   grid-template-rows: repeat(3, min-content);
-  grid-template-columns: min-content 2fr;
   grid-gap: 1rem 2rem;
-  justify-items: center;
+  
+  @include media($xxs) {
+    grid-template-columns: min-content 2fr;
+  }
+  
+  @include media($xs) {
+    justify-items: center;
+  }
 
   & > *:not(&__heading) {
     background-color: $color-white;
-    box-shadow: $shadow-secondary;
+    box-shadow: $shadow-tertiary;
   }
 
   &__heading {
@@ -22,6 +28,9 @@
   &__thumb {
     @include animateInDirection(left);
 
+    justify-self: center;
+    min-width: 17.5rem;
+    min-height: 17.5rem;
     padding: 1rem;
   }
 
@@ -56,10 +65,15 @@
   &__summary {
     @include animateInDirection(right);
 
-    grid-row: 2 / -1;
-    grid-column: 2 / -1;
+    grid-row: 3 / -1;
+    grid-column: 1 / -1;
     padding: 3rem;
     font-size: $font-size-default;
+
+    @include media($xs) {
+      grid-row: 2 / -1;
+      grid-column: 2 / -1;
+    }
   }
 
   &__description {

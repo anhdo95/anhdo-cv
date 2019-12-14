@@ -12,6 +12,7 @@
   &__background {
     @include transition;
 
+    min-width: 0;
     max-width: 0;
     height: 100%;
     overflow: hidden;
@@ -29,6 +30,7 @@
   }
 
   &__checkbox:checked ~ &__background {
+    min-width: 20rem;
     max-width: 20rem;
   }
   

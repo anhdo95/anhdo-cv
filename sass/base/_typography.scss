@@ -19,8 +19,12 @@ ul {
 .heading-primary {
   font-family: $font-display;
   font-weight: 100;
-  font-size: $font-size-xl;
+  font-size: $font-size-lg;
   text-transform: uppercase;
+  
+  @include media($xs) {
+    font-size: $font-size-xl;
+  }
 
   &--light {
     color: $color-grey-light-1;
@@ -34,9 +38,14 @@ ul {
 .heading-secondary {
   display: inline-block;
   font-family: $font-display;
-  font-weight: 100;
-  font-size: $font-size-lg;
+  font-weight: 300;
+  font-size: $font-size-md;
   text-transform: uppercase;
+
+  @include media($s) {
+    font-weight: 100;
+    font-size: $font-size-l;
+  }
 
   &--light {
     color: $color-grey-light-1;

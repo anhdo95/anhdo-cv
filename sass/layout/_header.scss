@@ -9,7 +9,9 @@
   &__heading-sub {
     @include animateInDirection(right);
 
-    letter-spacing: .5rem;
+    @include media($xs) {
+      letter-spacing: .5rem;
+    }
   }
 
   &__heading-main {

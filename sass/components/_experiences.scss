@@ -22,12 +22,16 @@ $gradient-colors: (
     font-size: $font-size-default;
     color: $color-grey-dark-2;
     background-color: $color-white;
-    box-shadow: $shadow-secondary;
+    box-shadow: $shadow-tertiary;
 
     display: grid;
-    grid-template-columns: 1fr min-content 2fr;
-    grid-gap: 1rem 4rem;
+    grid-gap: 2rem 4rem;
+    justify-items: center;
     align-items: start;
+
+    @include media($xs) {
+      grid-template-columns: 1fr min-content 2fr;
+    }
 
     &:not(:last-child) {
       margin-bottom: 3rem; 
@@ -35,7 +39,11 @@ $gradient-colors: (
   }
 
   &__designation {
-    text-align: right;
+    text-align: center;
+
+    @include media($xs) {
+      text-align: right;
+    }
   }
 
   &__position {
@@ -44,6 +52,8 @@ $gradient-colors: (
   }
 
   &__date {
+    grid-row: 1 / 2;
+
     position: relative;
     width: 12rem;
     height: 12rem;
@@ -51,6 +61,10 @@ $gradient-colors: (
     color: $color-grey-light-1;
     border: 1rem solid $color-grey-light-3;
     border-radius: $border-circle;
+
+    @include media($xs) {
+      grid-area: initial;
+    }
 
     @for $i from 1 through 3 {
       &--#{$i} {

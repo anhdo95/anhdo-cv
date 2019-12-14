@@ -2,16 +2,24 @@
   display: grid;
   
   grid-template-rows: 
-      [header-top] 100vh
-      [header-bottom] repeat(4, min-content)
-      [footer-top] 10rem
-      [footer-bottom];
+    [header-top] 100vh
+    [header-bottom] repeat(4, min-content)
+    [footer-top] 10rem
+    [footer-bottom];
+  grid-template-columns: 
+    [full-left] minmax(3rem, 1fr)
+    [center-left] repeat(8, [col-left] minmax(min-content, 14rem) [col-right])
+    [center-right] minmax(3rem, 1fr)
+    [full-right];
+  background-color: $color-grey-light-2;
+
+  @include media($m) {
     grid-template-columns: 
       [full-left] minmax(6rem, 1fr)
       [center-left] repeat(8, [col-left] minmax(min-content, 14rem) [col-right])
       [center-right] minmax(6rem, 1fr)
       [full-right];
-  background-color: $color-grey-light-2;
+  }
 
   @include media($m) {
     grid-template-rows: 
