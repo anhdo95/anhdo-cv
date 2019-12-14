@@ -7,19 +7,21 @@
 }
 
 html {
-  font-size: 62.5%; // This defines what 1rem is
+  font-size: 50%; // This defines what 1rem is
 
-  @include respond(big-desktop) {
-    font-size: 75%;
-  }
-  
-  @include respond(tab-land) {
+  @include media($ms) {
     font-size: 56.25%;
   }
 
-  @include respond(tab-port) {
-    font-size: 50%;
+  @include media($ml) {
+    font-size: 62.5%;
   }
+
+  @include media($xxl) {
+    font-size: 75%;
+  }
+
+  
 }
 
 body {

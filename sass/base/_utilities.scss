@@ -74,14 +74,14 @@
 }
 
 .mt-xl {
-  margin-top: 8rem;
+  margin-top: 2rem;
 
-  @include respond(tab-port) {
+  @include media($s) {
     margin-top: 4rem;
   }
 
-  @include respond(phone) {
-    margin-top: 2rem;
+  @include media($ml) {
+    margin-top: 8rem;
   }
 }
 
@@ -94,38 +94,38 @@
 }
 
 .mb-md {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 
-  @include respond(tab-port) {
+  @include media($s) {
     margin-bottom: 2rem;
   }
 
-  @include respond(phone) {
-    margin-bottom: 1.5rem;
+  @include media($ml) {
+    margin-bottom: 3rem;
   }
 }
 
 .mb-lg {
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 
-  @include respond(tab-port) {
+  @include media($s) {
     margin-bottom: 3rem;
   }
 
-  @include respond(phone) {
-    margin-bottom: 2rem;
+  @include media($ml) {
+    margin-bottom: 5rem;
   }
 }
 
 .mb-xl {
-  margin-bottom: 8rem;
+  margin-bottom: 2rem;
 
-  @include respond(tab-port) {
+  @include media($s) {
     margin-bottom: 4rem;
   }
 
-  @include respond(phone) {
-    margin-bottom: 2rem;
+  @include media($ml) {
+    margin-bottom: 8rem;
   }
 }
 
