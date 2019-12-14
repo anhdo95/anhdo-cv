@@ -1,17 +1,16 @@
 .skills {
   @include primaryBackground;
+  @include makeClipPath;
   @include contentColumns;
 
   grid-column: full-left / full-right;
-  -webkit-clip-path: polygon(0 25vh, 100% 0, 100% calc(100% - 25vh), 0 100%);
-  clip-path: polygon(0 25vh, 100% 0, 100% calc(100% - 25vh), 0 100%);
 
   &__inner {
     grid-column: center-content-left / center-content-right;
     padding: 35vh 0;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     grid-gap: 3rem;
   }
 

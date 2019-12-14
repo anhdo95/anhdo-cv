@@ -13,7 +13,7 @@
       [full-right];
   background-color: $color-grey-light-2;
 
-  @include media($ml) {
+  @include media($m) {
     grid-template-rows: 
       [sidebar-top header-top] 100vh
       [header-bottom] repeat(4, min-content)

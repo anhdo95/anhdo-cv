@@ -44,6 +44,45 @@
     }
 }
 
+@mixin makeClipPath($top: true) {
+  $edgeDirection: (
+    top: (
+      s: (
+        true: 0 25vh,
+        false: 0 0
+      ),
+      default: (
+        true: 0 15vh,
+        false: 0 0
+      )
+    )
+  );
+
+  $defaultTopEdge: map-get(
+    map-get(
+      map-get($edgeDirection, top),
+      default
+    ),
+    $top
+  );
+  
+  -webkit-clip-path: polygon($defaultTopEdge, 100% 0, 100% calc(100% - 15vh), 0 100%);
+  clip-path: polygon($defaultTopEdge, 100% 0, 100% calc(100% - 15vh), 0 100%);
+
+  @include media($s) {
+    $sTopEdge: map-get(
+      map-get(
+        map-get($edgeDirection, top),
+        s
+      ),
+      $top
+    );
+
+    -webkit-clip-path: polygon($sTopEdge, 100% 0, 100% calc(100% - 25vh), 0 100%);
+    clip-path: polygon($sTopEdge, 100% 0, 100% calc(100% - 25vh), 0 100%);
+  }
+}
+
 @mixin primaryBackground {
   background-image: linear-gradient(
     to right bottom,

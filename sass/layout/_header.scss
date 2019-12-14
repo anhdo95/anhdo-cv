@@ -1,10 +1,9 @@
 .header {
   @extend .flex-column-center;
   @include primaryBackground;
+  @include makeClipPath($top: false);
 
   grid-area: header-top / full-left / header-bottom / full-right;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   &__heading-main,
   &__heading-sub {
@@ -16,7 +15,11 @@
   &__heading-main {
     @include animateInDirection(left);
 
-    margin-top: -25vh;
+    margin-top: -15vh;
+
+    @include media($s) {
+      margin-top: -25vh;
+    }
   }
 
   &__social {

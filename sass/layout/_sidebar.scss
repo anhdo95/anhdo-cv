@@ -4,7 +4,7 @@
   z-index: $zindex-sidebar;
   text-align: center;
   
-  @include media($ml) {
+  @include media($m) {
     position: static;
     grid-area: sidebar-top / sidebar-left / sidebar-bottom / sidebar-right;
   }
@@ -22,7 +22,7 @@
     );
     box-shadow: $shadow-primary;
 
-    @include media($ml) {
+    @include media($m) {
       position: static;
       max-width: initial;
     }
@@ -42,7 +42,7 @@
     box-shadow: $shadow-primary;
     cursor: pointer;
 
-    @include media($ml) {
+    @include media($m) {
       display: none;
     }
   }
