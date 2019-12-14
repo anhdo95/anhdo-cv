@@ -56,6 +56,23 @@
   background-attachment: fixed;
 }
 
+@mixin contentColumns {
+  display: grid;
+  grid-template-columns: 
+    [full-content-left] minmax(6rem, 1fr)
+    [center-content-left] repeat(8, [col-content-left] minmax(min-content, 14rem) [col-content-right])
+    [center-content-right] minmax(6rem, 1fr)
+    [full-content-right];
+
+    @include media($ml) {
+      grid-template-columns: 
+        [full-content-left] minmax(6rem, 1fr)
+        [center-content-left] repeat(8, [col-content-left] minmax(min-content, 14rem) [col-content-right])
+        [center-content-right] minmax(6rem, 1fr)
+        [full-content-right];
+    }
+}
+
 @mixin media($breakpoint) {
   // @if $breakpoint == 2x-screen {
   //   // If the user is 2x screen resolution and match the conditions below

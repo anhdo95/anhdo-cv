@@ -1,24 +1,18 @@
 .skills {
   @include primaryBackground;
+  @include contentColumns;
 
   grid-column: full-left / full-right;
   -webkit-clip-path: polygon(0 25vh, 100% 0, 100% calc(100% - 25vh), 0 100%);
   clip-path: polygon(0 25vh, 100% 0, 100% calc(100% - 25vh), 0 100%);
 
-  display: grid;
-  grid-template-columns: 
-    [full-left] minmax(6rem, 1fr)
-    [center-left] repeat(8, [col-left] minmax(10.25rem, 1fr) [col-right])
-    [center-right] minmax(6rem, 1fr)
-    [full-right];
-
   &__inner {
-    grid-column: center-left / center-right;
+    grid-column: center-content-left / center-content-right;
     padding: 35vh 0;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 3rem;
   }
 
   &__heading {
