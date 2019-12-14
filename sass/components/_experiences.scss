@@ -40,8 +40,6 @@ $gradient-colors: (
   }
 
   &__date {
-    @include transition($delay: $transition-duration);
-
     position: relative;
     width: 12rem;
     height: 12rem;
@@ -69,10 +67,6 @@ $gradient-colors: (
       position: absolute;
       font-size: $font-size-sm;
     }
-  }
-
-  &__box:hover &__date {
-    transform: rotate(360deg);
   }
 
   &__date-invisible {
