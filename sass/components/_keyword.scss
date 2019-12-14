@@ -5,7 +5,8 @@
 
   &:hover {
     box-shadow: $shadow-primary;
-    color: $color-primary;
+    color: $color-white;
+    background-color: $color-primary;
     transform: rotate(3deg) scale(1.1);
   }
 }
