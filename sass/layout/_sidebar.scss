@@ -1,11 +1,94 @@
 .sidebar {
-  grid-area: sidebar-top / sidebar-left / sidebar-bottom / sidebar-right;
+  position: fixed;
+  height: 100%;
+  z-index: $zindex-sidebar;
   text-align: center;
-  background-image: linear-gradient(
-    to right bottom,
-    $color-primary,
-    $color-primary-dark,
+  
+  @include media($m) {
+    position: static;
+    grid-area: sidebar-top / sidebar-left / sidebar-bottom / sidebar-right;
+  }
+
+  &__background {
+    @include transition;
+
+    max-width: 0;
+    height: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(
+      to right bottom,
+      $color-primary,
+      $color-primary-dark,
     );
+
+    @include media($m) {
+      position: static;
+      max-width: initial;
+    }
+  }
+
+  &__checkbox:checked ~ &__background {
+    max-width: 20rem;
+  }
+  
+  &__button {
+    position: absolute;
+    right: -6rem;
+    top: 0;
+    width: 6rem;
+    height: 6rem;
+    background-color: $color-primary;
+    box-shadow: $shadow-primary;
+    cursor: pointer;
+  }
+
+  &__button-icon {
+    @include transition(transform);
+
+    position: relative;
+    display: block;
+    width: 4rem;
+    height: 2px;
+    margin: calc(3rem - 1px) auto 0;
+    background-color: $color-white;
+
+    &::before,
+    &::after {
+      @include transition;
+
+      position: absolute;
+      content: '';
+      left: 0;
+      width: 4rem;
+      height: 2px;
+      background-color: $color-white;
+    }
+
+    &::before {
+      top: -1.5rem;
+    }
+
+    &::after {
+      top: 1.5rem;
+    }
+  }
+
+  &__checkbox:checked + &__button &__button-icon {
+    background-color: transparent;
+
+    &::before,
+    &::after {
+      top: 0;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
 
   &__heading {
     @include animateInDirection(top);
