@@ -14,10 +14,14 @@
   }
 
   &__heading {
+    @include animateInDirection(top);
+
     grid-column: 1 / -1;
   }
 
   &__thumb {
+    @include animateInDirection(left);
+
     padding: 1rem;
   }
 
@@ -28,6 +32,8 @@
   }
 
   &__contact {
+    @include animateInDirection(left);
+
     display: grid;
     grid-template-columns: min-content max-content;
     grid-gap: 1.5rem 2rem;
@@ -48,6 +54,8 @@
   }
 
   &__summary {
+    @include animateInDirection(right);
+
     grid-row: 2 / -1;
     grid-column: 2 / -1;
     padding: 3rem;

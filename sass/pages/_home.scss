@@ -12,5 +12,6 @@
     [center-right] minmax(6rem, 1fr)
     [full-right];
 
-    background-color: $color-grey-light-2;
+  overflow-x: hidden;
+  background-color: $color-grey-light-2;
 }

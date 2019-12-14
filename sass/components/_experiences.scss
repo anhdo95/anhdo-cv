@@ -10,10 +10,14 @@ $gradient-colors: (
   display: grid;
 
   &__heading {
+    @include animateInDirection(top);
+
     justify-self: center;
   }
 
   &__box {
+    @include animateInDirection(bottom);
+
     padding: 4rem;
     font-size: $font-size-default;
     color: $color-grey-dark-2;

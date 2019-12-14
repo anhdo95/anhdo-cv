@@ -8,6 +8,8 @@
     );
 
   &__heading {
+    @include animateInDirection(top);
+
     display: block;
     padding: 2rem;
     background-color: $color-primary-dark;

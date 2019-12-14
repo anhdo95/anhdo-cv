@@ -22,6 +22,12 @@
   }
 
   &__heading {
+    @include animateInDirection(top);
+
     grid-column: 1 / -1;
+  }
+
+  & > *:not(&__heading) {
+    @include animateInDirection(bottom);
   }
 }
