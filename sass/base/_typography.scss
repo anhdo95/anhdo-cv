@@ -32,6 +32,7 @@ ul {
 }
 
 .heading-secondary {
+  display: inline-block;
   font-family: $font-display;
   font-weight: 100;
   font-size: $font-size-lg;
@@ -83,6 +84,10 @@ ul {
   font-weight: 400;
   font-size: $font-size-md;
   text-transform: uppercase;
+
+  &--thin {
+    font-weight: 300;
+  }
 
   &--light {
     color: $color-grey-light-1;
