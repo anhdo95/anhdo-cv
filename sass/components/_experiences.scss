@@ -6,8 +6,12 @@ $gradient-colors: (
 
 .experiences {
   grid-column: center-left / center-right;
-  margin: 10vh 0;
+  margin: 5vh 0;
   display: grid;
+
+  @include media($s) {
+    margin: 10vh 0;
+  }
 
   &__heading {
     @include animateInDirection(top);

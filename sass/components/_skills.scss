@@ -7,11 +7,15 @@
 
   &__inner {
     grid-column: center-content-left / center-content-right;
-    padding: 35vh 0;
+    padding: 30vh 0;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     grid-gap: 3rem;
+
+    @include media($s) {
+      padding: 35vh 0;
+    }
   }
 
   &__heading {

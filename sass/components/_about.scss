@@ -1,6 +1,6 @@
 .about {
   grid-column: center-left / center-right;
-  margin: 10vh 0;
+  margin: 5vh 0;
 
   display: grid;
   grid-template-rows: repeat(3, min-content);
@@ -12,6 +12,10 @@
   
   @include media($xs) {
     justify-items: center;
+  }
+
+  @include media($s) {
+    margin: 10vh 0;
   }
 
   & > *:not(&__heading) {
