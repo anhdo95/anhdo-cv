@@ -1,3 +1,9 @@
 .footer {
   grid-area: footer-top / full-left / footer-bottom / full-right;
+  margin: 10vh 0;
+
+  &__copyright {
+    font-size: $font-size-default;
+    text-align: center;
+  }
 }
