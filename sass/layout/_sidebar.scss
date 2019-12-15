@@ -107,13 +107,22 @@
     }
   }
 
-  &__heading {
+  &__logo-box {
     @include animateInDirection(top);
 
-    display: block;
-    padding: 2rem;
-    background-color: $color-primary-dark;
-    box-shadow: $shadow-primary;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  &__logo {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+  }
+
+  &__heading {
+    margin-top: .5rem;
   }
 
   &__item {
