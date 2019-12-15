@@ -98,9 +98,9 @@
 @mixin contentColumns {
   display: grid;
   grid-template-columns: 
-    [full-content-left] minmax(3rem, 1fr)
+    [full-content-left] minmax(4rem, 1fr)
     [center-content-left] repeat(8, [col-content-left] minmax(min-content, 14rem) [col-content-right])
-    [center-content-right] minmax(3rem, 1fr)
+    [center-content-right] minmax(4rem, 1fr)
     [full-content-right];
 
   @include media($ml) {
