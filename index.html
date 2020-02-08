@@ -47,7 +47,12 @@
         
             <div class="sidebar__background">
                 <figure class="sidebar__logo-box">
-                    <img class="sidebar__logo" src="img/logo.png" alt="Logo">
+                    <img class="sidebar__logo" 
+                        src="img/logo-2x.png"
+                        srcset="img/logo.png,
+                                img/logo-2x.png 2x,
+                                img/logo-3x.png 3x"
+                        alt="Logo">
                     <figcaption>
                         <h2 class="heading-secondary heading-secondary--light sidebar__heading">AnhDD</h2>
                     </figcaption>
@@ -160,7 +165,12 @@
             <h2 class="mb-md text-center heading-secondary heading-secondary--special about__heading">About me</h2>
         
             <figure class="about__thumb">
-                <img src="img/me-large.jpg" alt="Do Dinh Anh" class="about__photo">
+                <picture>
+                    <source media="(min-width: 445px)" srcset="img/my-avatar-400w.jpg">
+                    <img src="img/my-avatar-200w.jpg" 
+                        alt="Do Dinh Anh avatar" 
+                        class="about__photo">
+                </picture>
             </figure>
 
             <div class="about__summary">
@@ -190,7 +200,7 @@
                 </a>
             </div>
 
-            <div class="about__contact">
+            <address class="about__contact">
                 <svg class="about__icon">
                     <use xlink:href="img/sprite.svg#icon-phone"></use>
                 </svg>
@@ -207,7 +217,7 @@
                     <use xlink:href="img/sprite.svg#icon-globe"></use>
                 </svg>
                 <a class="about__text" href="https://anhdo95.github.io/">anhdo95.github.io</a>
-            </div>
+            </address>
         </section>
 
         <section id="skills" class="skills">
@@ -215,7 +225,7 @@
                 <h2 class="mb-md text-center heading-secondary heading-secondary--special-light skills__heading">
                     Technical Skills
                 </h2>
-                <div class="card">
+                <article class="card">
                     <div class="card__picture card__picture--1"></div>
                     <h4 class="card__heading">
                         <span class="card__heading-text card__heading-text--1">Programming Languages</span>
@@ -225,8 +235,8 @@
                         <li class="card__detail-item">C#.NET</li>
                         <li class="card__detail-item">HTML5, CSS3</li>
                     </ul>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card">
                     <div class="card__picture card__picture--2"></div>
                     <h4 class="card__heading">
                         <span class="card__heading-text card__heading-text--2">FRAMEWORKS & PLATFORMS</span>
@@ -238,8 +248,8 @@
                         <li class="card__detail-item">jQuery, Sass, Twitter Bootstrap</li>
                         <li class="card__detail-item">ASP.NET MVC, Web API, EF</li>
                     </ul>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card">
                     <div class="card__side">
                         <div class="card__picture card__picture--3"></div>
                         <h4 class="card__heading">
@@ -251,18 +261,18 @@
                             <li class="card__detail-item">Git, SVN</li>
                         </ul>
                     </div>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card">
                     <div class="card__picture card__picture--4"></div>
                     <h4 class="card__heading">
                         <span class="card__heading-text card__heading-text--4">Foreign Language</span>
                     </h4>
                     <ul class="card__details">
-                        <li class="card__detail-item">Good english reading/writing
+                        <div class="card__detail-item">Good english reading/writing
                         <li class="card__detail-item">English verbal communication</li>
                     </ul>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card">
                     <div class="card__picture card__picture--5"></div>
                     <h4 class="card__heading">
                         <span class="card__heading-text card__heading-text--5">Soft Skills</span>
@@ -272,8 +282,8 @@
                         <li class="card__detail-item">Good presentation</li>
                         <li class="card__detail-item">Good teamwork skill</li>
                     </ul>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card">
                     <div class="card__picture card__picture--6"></div>
                     <h4 class="card__heading">
                         <span class="card__heading-text card__heading-text--6">Others</span>
@@ -283,7 +293,7 @@
                         <li class="card__detail-item">Good understanding of OOP methodologies</li>
                         <li class="card__detail-item">Good understanding Agile and Scrum development process</li>
                     </ul>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -292,10 +302,10 @@
                 Working Experiences
             </h2>
             <article class="experiences__box">
-                <div class="experiences__designation">
+                <header class="experiences__designation">
                     <h3 class="heading-tertiary heading-tertiary--thin experiences__position">Web Developer</h3>
                     <p class="experiences__company">NTQ Solution</p>
-                </div>
+                </header>
         
                 <div class="text-center experiences__date experiences__date--1">
                     <p class="experiences__date-invisible">
@@ -336,10 +346,10 @@
             </article>
         
             <article class="experiences__box">
-                <div class="experiences__designation">
+                <header class="experiences__designation">
                     <h3 class="heading-tertiary heading-tertiary--thin experiences__position">Junior Developer</h3>
                     <p class="experiences__company">PowerGate Software</p>
-                </div>
+                </header>
         
                 <div class="text-center experiences__date experiences__date--2">
                     <p class="experiences__date-invisible">
@@ -383,9 +393,9 @@
             </article>
         
             <article class="experiences__box">
-                <div class="experiences__designation">
+                <header class="experiences__designation">
                     <h3 class="heading-tertiary heading-tertiary--thin experiences__position">Pet Project</h3>
-                </div>
+                </header>
         
                 <div class="text-center experiences__date experiences__date--3">
                     <p class="experiences__date-invisible">
