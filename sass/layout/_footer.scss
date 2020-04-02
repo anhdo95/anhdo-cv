@@ -2,11 +2,7 @@
   @include animateInDirection(bottom);
 
   grid-area: footer-top / full-left / footer-bottom / full-right;
-  margin: 5vh 0;
-
-  @include media($s) {
-    margin: 10vh 0;
-  }
+  align-self: center;
 
   &__copyright {
     font-size: $font-size-default;
