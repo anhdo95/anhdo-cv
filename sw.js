@@ -3,9 +3,19 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 self.__WB_DISABLE_DEV_LOGS = true
 
 workbox.precaching.precacheAndRoute([
-  {url: '/', revision: '1590936675913' },
-  {url: '/index.html', revision: '1590936683721' },
-  {url: '/css/style.css', revision: '1590936686729' },
+  { url: "/", revision: "1590936675913" },
+  { url: "/index.html", revision: "1590936683721" },
+  { url: "/css/style.css", revision: "1590936686729" },
+  { url: "/img/sprite.svg", revision: "312890312921" },
+  { url: "/img/logo.png", revision: "312890312922" },
+  { url: "/img/logo-2x.png", revision: "312890312923" },
+  { url: "/img/logo-3x.png", revision: "312890312924" },
+  { url: "/img/hero-1-large.jpg", revision: "312890312925" },
+  { url: "/img/hero-2-small.jpg", revision: "312890312926" },
+  { url: "/img/my-avatar-200w.jpg", revision: "312890312927" },
+  { url: "/img/my-avatar-400w.jpg", revision: "312890312928" },
+  { url: "/file/agile-developers-certificate.jpg", revision: "312890312929" },
+  { url: "/file/my-cv.pdf", revision: "3128903111111" },
 ])
 
 workbox.routing.registerRoute(
