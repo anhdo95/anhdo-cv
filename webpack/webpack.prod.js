@@ -42,12 +42,21 @@ module.exports = merge(webpackCore, {
       {
         test: /\.(png|jpe?g|gif)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: 'images/[name][hash].[ext]'
-          }
-        }
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[name][hash].[ext]'
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+            },
+          },
+        ]
       },
     ]
   },
