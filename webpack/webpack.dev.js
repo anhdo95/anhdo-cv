@@ -35,7 +35,17 @@ module.exports = merge(webpackCore, {
           'css-loader',
           'sass-loader',
         ]
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 15000,
+          }
+        }
+      },
     ]
   }
 })

@@ -8,7 +8,9 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const { resolve } = require('./utils')
 
 module.exports = {
-  entry: resolve('src/app.js'),
+  entry: {
+    app: resolve('src/app.js'),
+  },
 
   output: {
     publicPath: "/",
@@ -16,12 +18,21 @@ module.exports = {
   },
 
   resolve: {
-		extensions: ['.js', '.scss', '.sass', '.css'],
+		extensions: ['.js', '.scss', '.sass', '.css', '.html'],
 		alias: {
 			'@': resolve('src'),
-			'@assets': resolve('public'),
+			'img': resolve('public/images'),
     }
-	},
+  },
+  
+  module: {
+    rules: [
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
+    ]
+  },
 
   plugins: [new CleanWebpackPlugin(), new HtmlWebpackPlugin({
     template: resolve('public/index.html'),
