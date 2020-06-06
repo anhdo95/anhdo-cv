@@ -1,8 +1,7 @@
-const path = require('path')
-const glob = require('glob')
 const webpack = require('webpack')
 const merge = require("webpack-merge")
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 const webpackCore = require('./webpack.core')
 
@@ -96,6 +95,12 @@ module.exports = merge(webpackCore, {
   },
 
   plugins: [
+    new OptimizeCSSAssetsPlugin({
+      canPrint: false,
+      cssProcessorOptions: {
+        safe: true
+      }
+    }),
     new MiniCSSExtractPlugin({
       filename: "styles/[contenthash].css",
     }),
