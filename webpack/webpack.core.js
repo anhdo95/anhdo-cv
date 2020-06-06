@@ -1,15 +1,12 @@
-const path = require('path')
-const glob = require('glob')
-const webpack = require('webpack')
-const merge = require("webpack-merge")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const CopyPlugin = require('copy-webpack-plugin');
 
 const { resolve } = require('./utils')
 
 module.exports = {
   entry: {
-    app: resolve('src/app.js'),
+    app: resolve("src/app.js"),
   },
 
   output: {
@@ -18,49 +15,59 @@ module.exports = {
   },
 
   resolve: {
-		extensions: ['.js', '.scss', '.sass', '.css', '.html'],
-		alias: {
-			'@': resolve('src'),
-			'img': resolve('public/images'),
-			'svg': resolve('public/svgs'),
-			'file': resolve('public/files'),
-    }
+    extensions: [".js", ".scss", ".sass", ".css", ".html"],
+    alias: {
+      "@": resolve("src"),
+      img: resolve("public/images"),
+      svg: resolve("public/svgs"),
+      file: resolve("public/files"),
+    },
   },
-  
+
   module: {
     rules: [
       {
         test: /\.html$/i,
-        loader: 'html-loader',
+        loader: "html-loader",
         options: {
           attributes: {
             list: [
               {
-                attribute: 'src',
-                type: 'src',
+                attribute: "src",
+                type: "src",
               },
               {
-                attribute: 'srcset',
-                type: 'srcset',
+                attribute: "srcset",
+                type: "srcset",
               },
               {
-                attribute: 'href',
-                type: 'src',
+                attribute: "href",
+                type: "src",
               },
               {
-                tag: 'use',
-                attribute: 'xlink:href',
+                tag: "use",
+                attribute: "xlink:href",
                 // Type of processing, can be `src` or `scrset`
-                type: 'src',
+                type: "src",
               },
-            ]
+            ],
           },
-        }
+        },
       },
-    ]
+    ],
   },
 
-  plugins: [new CleanWebpackPlugin(), new HtmlWebpackPlugin({
-    template: resolve('public/index.html'),
-  })],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [
+        { from: resolve('public/static'), to: resolve('dist/static') },
+        { from: resolve('public/sw.js') },
+        { from: resolve('public/manifest.json') },
+      ],
+    }),
+    new HtmlWebpackPlugin({
+      template: resolve("public/index.html"),
+    }),
+  ],
 };

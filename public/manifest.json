@@ -3,42 +3,42 @@
   "short_name": "Anh Do",
   "icons": [
     {
-      "src": "/img/apple-icon-60x60.png",
+      "src": "/static/apple-icon-60x60.png",
       "type": "image/png",
       "sizes": "60x60"
     },
     {
-      "src": "/img/apple-icon-76x76.png",
+      "src": "/static/apple-icon-76x76.png",
       "type": "image/png",
       "sizes": "76x76"
     },
     {
-      "src": "/img/apple-icon-120x120.png",
+      "src": "/static/apple-icon-120x120.png",
       "type": "image/png",
       "sizes": "120x120"
     },
     {
-      "src": "/img/apple-icon-152x152.png",
+      "src": "/static/apple-icon-152x152.png",
       "type": "image/png",
       "sizes": "152x152"
     },
     {
-      "src": "/img/apple-icon-180x180.png",
+      "src": "/static/apple-icon-180x180.png",
       "type": "image/png",
       "sizes": "180x180"
     },
     {
-      "src": "/img/android-icon-192x192.png",
+      "src": "/static/android-icon-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/img/ms-icon-310x310.png",
+      "src": "/static/ms-icon-310x310.png",
       "type": "image/png",
       "sizes": "310x310"
     },
     {
-      "src": "/img/apple-icon-512x512.png",
+      "src": "/static/apple-icon-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
