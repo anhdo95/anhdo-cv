@@ -37,7 +37,7 @@ module.exports = merge(webpackCore, {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif)$/,
+        test: /\.(png|jpe?g|gif|svg)$/,
         exclude: /node_modules/,
         use: {
           loader: 'url-loader',
@@ -47,5 +47,5 @@ module.exports = merge(webpackCore, {
         }
       },
     ]
-  }
+  },
 })

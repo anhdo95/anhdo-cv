@@ -22,6 +22,7 @@ module.exports = {
 		alias: {
 			'@': resolve('src'),
 			'img': resolve('public/images'),
+			'svg': resolve('public/svgs'),
     }
   },
   
@@ -30,6 +31,26 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: 'html-loader',
+        options: {
+          attributes: {
+            list: [
+              {
+                attribute: 'src',
+                type: 'src',
+              },
+              {
+                attribute: 'srcset',
+                type: 'srcset',
+              },
+              {
+                tag: 'use',
+                attribute: 'xlink:href',
+                // Type of processing, can be `src` or `scrset`
+                type: 'src',
+              },
+            ]
+          },
+        }
       },
     ]
   },

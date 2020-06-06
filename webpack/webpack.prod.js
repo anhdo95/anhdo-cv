@@ -29,41 +29,53 @@ module.exports = merge(webpackCore, {
             //   },
             // },
           },
-          'css-loader',
+          "css-loader",
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
-              plugins: () => [require('autoprefixer')()]
-            }
-          }, 
-          'sass-loader'
-        ]
+              plugins: () => [require("autoprefixer")()],
+            },
+          },
+          "sass-loader",
+        ],
       },
       {
         test: /\.(png|jpe?g|gif)$/,
         exclude: /node_modules/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: 'images/[name][hash].[ext]'
+              name: "images/[name][hash].[ext]",
             },
           },
           {
-            loader: 'image-webpack-loader',
+            loader: "image-webpack-loader",
             options: {
               bypassOnDebug: true, // webpack@1.x
               disable: true, // webpack@2.x and newer
             },
           },
-        ]
+        ],
       },
-    ]
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "svgs/[contenthash].[ext]",
+            },
+          },
+          "svgo-loader",
+        ],
+      },
+    ],
   },
 
   plugins: [
     new MiniCSSExtractPlugin({
-      filename: 'styles/[contenthash].css',
-    })
-  ]
-})
+      filename: "styles/[contenthash].css",
+    }),
+  ],
+});

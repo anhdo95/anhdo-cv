@@ -1,10 +1,10 @@
 import './sass/main.scss'
 
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('/sw.js')
-    .then(function() {
-      console.log('[Service Worker] Registered')
-    })
+  // navigator.serviceWorker.register('/sw.js')
+  //   .then(function() {
+  //     console.log('[Service Worker] Registered')
+  //   })
 }
 
 let deferredPrompt
