@@ -66,9 +66,6 @@ module.exports = merge(webpackCore, {
               gifsicle: {
                 interlaced: false,
               },
-              webp: {
-                quality: 75
-              }
             },
           },
         ],
