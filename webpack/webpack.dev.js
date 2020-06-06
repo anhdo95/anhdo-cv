@@ -37,7 +37,7 @@ module.exports = merge(webpackCore, {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
+        test: /\.(png|jpe?g|gif)$/,
         exclude: /node_modules/,
         use: {
           loader: 'url-loader',
@@ -45,6 +45,17 @@ module.exports = merge(webpackCore, {
             limit: 15000,
           }
         }
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "svgs/[name].[ext]",
+            },
+          },
+        ],
       },
       {
         test: /\.pdf$/,
