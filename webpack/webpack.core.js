@@ -23,6 +23,7 @@ module.exports = {
 			'@': resolve('src'),
 			'img': resolve('public/images'),
 			'svg': resolve('public/svgs'),
+			'file': resolve('public/files'),
     }
   },
   
@@ -41,6 +42,10 @@ module.exports = {
               {
                 attribute: 'srcset',
                 type: 'srcset',
+              },
+              {
+                attribute: 'href',
+                type: 'src',
               },
               {
                 tag: 'use',

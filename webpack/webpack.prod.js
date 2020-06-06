@@ -52,8 +52,23 @@ module.exports = merge(webpackCore, {
           {
             loader: "image-webpack-loader",
             options: {
-              bypassOnDebug: true, // webpack@1.x
-              disable: true, // webpack@2.x and newer
+              mozjpeg: {
+                progressive: true,
+                quality: 75
+              },
+              optipng: {
+                enabled: true,
+              },
+              pngquant: {
+                quality: [0.75, 0.90],
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              webp: {
+                quality: 75
+              }
             },
           },
         ],
@@ -69,6 +84,16 @@ module.exports = merge(webpackCore, {
           },
           "svgo-loader",
         ],
+      },
+      {
+        test: /\.pdf$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "files/[contenthash].[ext]",
+          },
+        },
       },
     ],
   },

@@ -46,6 +46,11 @@ module.exports = merge(webpackCore, {
           }
         }
       },
+      {
+        test: /\.pdf$/,
+        exclude: /node_modules/,
+        use: 'file-loader'
+      },
     ]
   },
 })
