@@ -15,6 +15,7 @@ module.exports = measure(merge(webpackCore, {
         test: /\.(css|scss|sass)$/,
         exclude: /node_modules/,
         use: [
+          'cache-loader',
           {
             loader: MiniCSSExtractPlugin.loader,
             // options: {
@@ -43,6 +44,7 @@ module.exports = measure(merge(webpackCore, {
         test: /\.(png|jpe?g|gif)$/,
         exclude: /node_modules/,
         use: [
+          'cache-loader',
           {
             loader: "file-loader",
             options: {
