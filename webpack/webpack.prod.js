@@ -3,11 +3,12 @@ const merge = require("webpack-merge")
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
+
 const webpackCore = require('./webpack.core')
 
-const { resolve } = require('./utils')
+const { measure, resolve } = require('./utils')
 
-module.exports = merge(webpackCore, {
+module.exports = measure(merge(webpackCore, {
   module: {
     rules: [
       {
@@ -71,6 +72,7 @@ module.exports = merge(webpackCore, {
       },
       {
         test: /\.svg$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: "file-loader",
@@ -105,4 +107,4 @@ module.exports = merge(webpackCore, {
       filename: "styles/[contenthash].css",
     }),
   ],
-});
+}));
