@@ -3,8 +3,8 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 self.__WB_DISABLE_DEV_LOGS = true
 
 workbox.precaching.precacheAndRoute([
-  { url: "/", revision: "1590936675913" },
-  { url: "/index.html", revision: "1590936683721" },
+  { url: "/", revision: "1590936675914" },
+  { url: "/index.html", revision: "1590936683722" },
 ])
 
 workbox.routing.registerRoute(
